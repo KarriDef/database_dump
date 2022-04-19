@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 14.2
 
--- Started on 2022-04-18 23:50:52
+-- Started on 2022-04-19 22:58:22
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -401,12 +401,6 @@ ALTER TABLE ONLY public."Сomments" ALTER COLUMN id SET DEFAULT nextval('public.
 -- Data for Name: action; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.action (id, user_id, customers_id, description, comment, due_date, date_complete) VALUES (1, 1, 1, 'Звонок', 'Готовый клиент', '2022-03-26', '2022-03-28');
-INSERT INTO public.action (id, user_id, customers_id, description, comment, due_date, date_complete) VALUES (2, 2, 1, 'Недозвон', 'Перезвонить', '2022-03-20', '2022-03-26');
-INSERT INTO public.action (id, user_id, customers_id, description, comment, due_date, date_complete) VALUES (3, 3, 1, 'Звонок', 'Сотрудничество', '2022-03-21', '2022-05-28');
-INSERT INTO public.action (id, user_id, customers_id, description, comment, due_date, date_complete) VALUES (4, 1, 1, 'Звонок', 'Готовый клиент', '2022-03-26', '2022-03-28');
-INSERT INTO public.action (id, user_id, customers_id, description, comment, due_date, date_complete) VALUES (5, 2, 1, 'Недозвон', 'Перезвонить', '2022-03-20', '2022-03-26');
-INSERT INTO public.action (id, user_id, customers_id, description, comment, due_date, date_complete) VALUES (6, 3, 1, 'Звонок', 'Сотрудничество', '2022-03-21', '2022-05-28');
 
 
 --
@@ -429,9 +423,6 @@ INSERT INTO public.contact (id, customers_id, full_name, phone, job_title, note,
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.customers (id, departament_id, user_id, name, phone, "сreated", inn, type_action, alias, email, time_zone, website, last_upd, address, note, main_reg_number, code_reason_reg, legal_address, bank, identification_code, corr_account, name_manager, job_title_manager, payment_account) VALUES (2, 1, 3, 'Медком', '99-82-88', '2022-04-06', 1456267786, 'Стоматология', 'ООО "Медком"', 'medcom@com', '0', 'www.medcom.com', '2022-04-06', 'Театральная 50', 'Компания в рязани', 46751346, 566658, 'Город Рязань, улица Театральная 50', 'Сбербанк', 679789, 269577, 'Горбачев В.П.', 'Исполняющий директора', 35602);
-INSERT INTO public.customers (id, departament_id, user_id, name, phone, "сreated", inn, type_action, alias, email, time_zone, website, last_upd, address, note, main_reg_number, code_reason_reg, legal_address, bank, identification_code, corr_account, name_manager, job_title_manager, payment_account) VALUES (3, 1, 3, 'Стройпромсервис', '20-82-50', '2022-04-06', 456712349, 'Строительство', 'ОАО "Стройпромсервис"', 'stroiproservice@com', '+2', 'www.stroiproservice.com', '2022-04-06', 'Есенина,36', 'Строительство', 48651346, 51296658, 'Город Рязань, улица Есенина,36', 'Альфа-банк', 677889, 869213, 'Амосова М.И.', 'Директор', 350502);
-INSERT INTO public.customers (id, departament_id, user_id, name, phone, "сreated", inn, type_action, alias, email, time_zone, website, last_upd, address, note, main_reg_number, code_reason_reg, legal_address, bank, identification_code, corr_account, name_manager, job_title_manager, payment_account) VALUES (1, 1, 1, 'Медлайн', '99-55-88', '2022-04-06', 145623786, 'Медицина(частн.)', 'ООО "Медлаин"', 'medline@com', '0', 'www.mail.com', '2022-04-13', 'Вокзальная 55', 'Компания в рязани', 4671346, 568, 'Город Рязань, улица Вокзальная 55', 'Tinkoff', 679, 268577, 'Семенов В.И.', 'Исполняющий директора', 35672);
 
 
 --
@@ -451,20 +442,21 @@ INSERT INTO public.departments (id, parent_id, director, name) VALUES (3, 1, 'М
 -- Data for Name: employee; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (3, 'noifalleff0@yopmail.com', 'OPA7-AA9086', 3, 'Матвеева Я.С.', 'noifalleff0@yopmail.com', '2001-12-07', '8-730-840-49-01', 'Сотрудник CRM', 'Сотрудник Казанского филиала', 'Г.Казань, Новая,12', false);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (1, 'nan@yopmail.com', 'AA7-AAY001', 1, 'Ковальчук Е.А.', 'nan@yopmail.com', '1999-06-07', '8-930-890-42-00', 'Руководитель CRM', 'Руководитель Рязанского филиала', 'Г. Рязань, Циалковского,12', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (2, 'foitu@yopmail.com', 'AA7-B081', 2, 'Сергеев П.И.', 'foitu@yopmail.com', '2002-09-01', '8-890-890-49-00', 'Сотрудник CRM', 'Сотрудник Рязанского филиала', 'Г. Рязань, Циалковского,12', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (6, 'barton.rebeca@mcclure.info', 'AA7-AAY0013', 1, 'Шолян Руслан Жирайрович', 'barton.rebeca@mcclure.info', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (7, 'genevieve.corkery@hotmail.com', 'AA7-AAY002', 1, 'Яковлев Борис Размикович', 'genevieve.corkery@hotmail.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (8, 'kunde.jaylen@schoen.info', 'AA7-AAY003', 1, 'Бабкин Никита Александрович', 'kunde.jaylen@schoen.info', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (9, 'prohaska.danny@mcglynn.com', 'AA7-AAY004', 1, 'Якимов Илья Александрович', 'prohaska.danny@mcglynn.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (10, 'bernhard.joel@gmail.com', 'AA7-AAY005', 1, 'Белавин Егор Александрович', 'bernhard.joel@gmail.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (11, 'zena.koch@yahoo.com', 'AA7-AAY006', 1, 'Чиликин Дмитрий Игоревич', 'zena.koch@yahoo.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (12, 'nakia23@gmail.com', 'AA7-AAY00', 1, 'Зарецкая Анастасия Александровна', 'nakia23@gmail.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (13, 'aurelia.cremin@hotmail.com', 'AA7-AAY008', 1, 'Куликов Егор Максимович', 'aurelia.cremin@hotmail.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (14, 'gregg.sawayn@hotmail.com', 'AA7-AAY009', 1, 'Фомин Александр Вадимович', 'gregg.sawayn@hotmail.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (15, 'chet68@quitzon.com', 'AA7-AAY000', 1, 'Павлов Алексей Багирович', 'chet68@quitzon.com', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
-INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (16, 'dohara@terry.org', 'AA7-AAY011', 1, 'Викулов Никита Кириллович', 'dohara@terry.org', '1999-06-07', '8-930-890-42-00', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (41, 'bochkov@ukc62.ru', 'AA7-AAY0013', 1, 'Бочков Алексей Александрович', 'bochkov@ukc62.ru', '1999-06-07', '79511023092', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (42, 'stativko@ukc62.ru', 'AA7-AAY002', 1, 'Стативко Алексей Вячеславович', 'stativko@ukc62.ru', '1999-06-07', '79065404240', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (43, 'terentev@ukc62.ru', 'AA7-AAY003', 1, 'Терентев Сергей Максимович', 'terentev@ukc62.ru', '1999-06-07', '79206345517', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (44, 'sholyan@ukc62.ru', 'AA7-AAY004', 1, 'Шолян Руслан Жирайрович', 'sholyan@ukc62.ru', '1999-06-07', '79969118301', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (45, 'yakovlev@ukc62.ru', 'AA7-AAY005', 1, 'Яковлев Борис Размикович', 'yakovlev@ukc62.ru', '1999-06-07', '79066477979', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (46, 'babkin@ukc62.ru', 'AA7-AAY006', 1, 'Бабкин Никита Александрович', 'babkin@ukc62.ru', '1999-06-07', '79521260135', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (47, 'yakimov@ukc62.ru', 'AA7-AAY00', 1, 'Якимов Илья Александрович', 'yakimov@ukc62.ru', '1999-06-07', '79610090309', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (48, 'belavin@ukc62.ru', 'AA7-AAY008', 1, 'Белавин Егор Александрович', 'belavin@ukc62.ru', '1999-06-07', '79209911284', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (49, 'chilikin@ukc62.ru', 'AA7-AAY009', 1, 'Чиликин Дмитрий Игоревич', 'chilikin@ukc62.ru', '1999-06-07', '79106392227', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (50, 'zaretskaya@ukc62.ru', 'AA7-AAY000', 1, 'Зарецкая Анастасия Александровна', 'zaretskaya@ukc62.ru', '1999-06-07', '79105069003', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (51, 'kulikov@ukc62.ru', 'AA7-AAY091', 1, 'Куликов Егор Максимович', 'kulikov@ukc62.ru', '1999-06-07', '79997645441', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (52, 'fomin@ukc62.ru', 'AA7-AAY081', 1, 'Фомин Александр Вадимович', 'fomin@ukc62.ru', '1999-06-07', '79623944650', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (53, 'pavlov@ukc62.ru', 'AA7-AAY051', 1, 'Павлов Алексей Багирович', 'pavlov@ukc62.ru', '1999-06-07', '79997602490', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (54, 'vikulov@ukc62.ru', 'AA7-AAY061', 1, 'Викулов Никита Кириллович', 'vikulov@ukc62.ru', '1999-06-07', '79537316156', 'CRM', 'Филиал', 'Тула', true);
+INSERT INTO public.employee (id, login, password, departament_id, full_name, email, birth_day, phone, job_title, note, address, inactive) VALUES (55, 'sobolev@ukc62.ru', 'AA7-AAY071', 1, 'Соболев Григорий Игоревич', 'sobolev@ukc62.ru', '1999-06-07', '79966161992', 'CRM', 'Филиал', 'Тула', true);
 
 
 --
@@ -517,7 +509,7 @@ SELECT pg_catalog.setval('public.departments_id_seq', 3, true);
 -- Name: employee_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.employee_id_seq', 16, true);
+SELECT pg_catalog.setval('public.employee_id_seq', 55, true);
 
 
 --
@@ -690,7 +682,7 @@ ALTER TABLE ONLY public.employee
     ADD CONSTRAINT fk_employee_dep FOREIGN KEY (departament_id) REFERENCES public.departments(id) ON DELETE SET NULL;
 
 
--- Completed on 2022-04-18 23:50:52
+-- Completed on 2022-04-19 22:58:23
 
 --
 -- PostgreSQL database dump complete
